@@ -38,3 +38,5 @@ C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\WebApplication\bin\DAL.pdb
 C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete
 C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\WebApplication\obj\Debug\WebApplication.dll
 C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\WebApplication\obj\Debug\WebApplication.pdb
+C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\WebApplication\bin\Entidades.dll
+C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\WebApplication\bin\Entidades.pdb

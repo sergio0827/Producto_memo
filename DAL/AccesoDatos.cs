@@ -114,6 +114,7 @@ namespace DAL
                 salida = false;
                 mensaje = "No hay conexión a la BD.";
             }
+            CerrarConexion();
             return salida;
         }
 

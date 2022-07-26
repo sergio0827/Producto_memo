@@ -98,6 +98,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{06c432eb-ca8e-48f6-81c1-a9d46899017e}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
       <Project>{5c347729-abf1-4f67-ad98-20f4444c62bd}</Project>
       <Name>LogicaNegocio</Name>

@@ -7,3 +7,5 @@ C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\LogicaNegocio\bin\Debug\DAL
 C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\LogicaNegocio\bin\Debug\Entidades.dll
+C:\Users\mcmen\OneDrive\Escritorio\Sergio\Producto_2\LogicaNegocio\bin\Debug\Entidades.pdb
