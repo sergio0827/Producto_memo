@@ -70,6 +70,7 @@
     <Content Include="Alumnos.aspx" />
     <Content Include="Carrera.aspx" />
     <Content Include="ConsultasAvanzadas.aspx" />
+    <Content Include="Cuatrimestre.aspx" />
     <Content Include="Web.config" />
     <Content Include="Profesores.aspx" />
   </ItemGroup>
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="ConsultasAvanzadas.aspx.designer.cs">
       <DependentUpon>ConsultasAvanzadas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cuatrimestre.aspx.cs">
+      <DependentUpon>Cuatrimestre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cuatrimestre.aspx.designer.cs">
+      <DependentUpon>Cuatrimestre.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site1.Master.cs">

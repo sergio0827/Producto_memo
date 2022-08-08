@@ -23,6 +23,9 @@
                         <a class="nav-link active" aria-current="page" href="Profesores.aspx">Profesores</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="Cuatrimestre.aspx">Cuatrimestre</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="Alumnos.aspx">Alumno</a>
                     </li>
                     <li class="nav-item">

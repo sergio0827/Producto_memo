@@ -19,7 +19,12 @@ namespace LogicaNegocio
             List<SqlParameter> listaParametros = new List<SqlParameter>();
             return DAL.ConsultarReaderconParametros("SELECT * FROM Profesor", ref mensaje, listaParametros);
         }
-
+        public SqlDataReader VerCuatrimestre()
+        {
+            string mensaje = "";
+            List<SqlParameter> listaParametros = new List<SqlParameter>();
+            return DAL.ConsultarReaderconParametros("SELECT * FROM Cuatrimestre", ref mensaje, listaParametros);
+        }
         public string InsertarProfesor(Entidades.Profesor nuevo)
         {
             string mensaje = "";
@@ -111,20 +116,6 @@ namespace LogicaNegocio
             return mensaje;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         public SqlDataReader VerEstadoCivil()
         {
             string mensaje = "";
@@ -139,7 +130,7 @@ namespace LogicaNegocio
             return DAL.ConsultarReaderconParametros("SELECT * FROM Cuatrimestre WHERE id_Cuatrimestre = @id", ref mensaje, listaParametros);
         }
 
-        public SqlDataReader VerCuatrimestre()
+        public SqlDataReader VerCuatrimestres()
         {
             string mensaje = "";
             List<SqlParameter> listaParametros = new List<SqlParameter>();
@@ -158,12 +149,12 @@ namespace LogicaNegocio
             DAL.modificacionSegura("INSERT INTO Cuatrimestre (Periodo, Anio, Inicio, Fin, Extra) VALUES (@periodo, @anio, @inicio, @fin, @extra)", ref mensaje, listaParametros);
             return mensaje;
         }
-        public string EliminarCuatrimestre(int id)
+        public string EliminarCuatrimestre(string periodo)
         {
             string mensaje = "";
             List<SqlParameter> listaParametros = new List<SqlParameter>();
-            listaParametros.Add(new SqlParameter("id", id));
-            DAL.modificacionSegura("DELETE FROM Cuatrimestre WHERE id_Cuatrimestre = @id", ref mensaje, listaParametros);
+            listaParametros.Add(new SqlParameter("periodo", periodo));
+            DAL.modificacionSegura("DELETE FROM Cuatrimestre WHERE Periodo = @periodo", ref mensaje, listaParametros);
             return mensaje;
         }
 
