@@ -14,42 +14,7 @@ namespace WebApplication
         private BL bl = new BL();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-            //F_EdoCivil.Items.Clear();
-
-            //F_EdoCivil.Items.Add(new ListItem()
-            //{
-            //    Text = "Soltero",
-            //    Value = "12",
-            //});
-            //F_EdoCivil.Items.Add(new ListItem()
-            //{
-            //    Text = "Casado",
-            //    Value = "2",
-            //});
-            //F_EdoCivil.Items.Add(new ListItem()
-            //{
-            //    Text = "Divorciado",
-            //    Value = "4",
-            //});
-            //F_EdoCivil.Items.Add(new ListItem()
-            //{
-            //    Text = "Union Libre",
-            //    Value = "5",
-            //});
-            //F_EdoCivil.Items.Add(new ListItem()
-            //{
-            //    Text = "Viudo",
-            //    Value = "6",
-            //});
-            //F_EdoCivil.Items.Add(new ListItem()
-            //{
-            //    Text = "raro",
-            //    Value = "12",
-            //});
-
-
+            Label1.Text = "";
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -61,44 +26,61 @@ namespace WebApplication
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Write(F_EdoCivil.SelectedValue);
-
-            int drop = Convert.ToInt32(F_EdoCivil.SelectedValue);
-
-            Label1.Text = bl.InsertarProfesor(new Entidades.Profesor()
+            try
             {
-                RegistroEmpleado = Convert.ToInt16(RegistroEmpleado.Text),
-                Nombre = Nombre.Text,
-                Ap_Pat = Ap_pat.Text,
-                Ap_Mat = Ap_Mat.Text,
-                Categoria = Categoria.Text,
-                Celular = Celular.Text,
-                Correo = Correo.Text,
-                Genero = Genero.Text,
-                F_EdoCivil = drop
-            });
-
+                int drop = Convert.ToInt32(F_EdoCivil.SelectedValue);
+                Label1.Text = bl.InsertarProfesor(new Entidades.Profesor()
+                {
+                    RegistroEmpleado = Convert.ToInt16(RegistroEmpleado.Text),
+                    Nombre = Nombre.Text,
+                    Ap_Pat = Ap_pat.Text,
+                    Ap_Mat = Ap_Mat.Text,
+                    Categoria = Categoria.Text,
+                    Celular = Celular.Text,
+                    Correo = Correo.Text,
+                    Genero = Genero.Text,
+                    F_EdoCivil = drop
+                });
+            }
+            catch(Exception ex)
+            {
+                Label1.Text = ex.Message;
+            }
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Label1.Text = bl.EliminarProfesor(Convert.ToInt16(idEliminar.Text));
+            try
+            {
+                Label1.Text = bl.EliminarProfesor(Convert.ToInt16(idEliminar.Text));
+            }catch(Exception ex)
+            {
+                Label1.Text = ex.Message;
+            }
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Label1.Text = bl.UpdateProfesor(new Entidades.Profesor()
+            try
             {
-                ID_Profe = Convert.ToInt16(idEditar.Text),
-                RegistroEmpleado = Convert.ToInt16(RegistroEmpleado.Text),
-                Nombre = Nombre.Text,
-                Ap_Pat = Ap_pat.Text,
-                Ap_Mat = Ap_Mat.Text,
-                F_EdoCivil = Convert.ToInt16(F_EdoCivil.SelectedValue),
-                Categoria = Categoria.Text,
-                Celular = Celular.Text,
-                Correo = Correo.Text,
-                Genero = Genero.Text
-            });
+                Label1.Text = bl.UpdateProfesor(new Entidades.Profesor()
+                {
+                    RegistroEmpleado = Convert.ToInt16(RegistroEmpleado.Text),
+                    Nombre = Nombre.Text,
+                    Ap_Pat = Ap_pat.Text,
+                    Ap_Mat = Ap_Mat.Text,
+                    F_EdoCivil = Convert.ToInt16(F_EdoCivil.SelectedValue),
+                    Categoria = Categoria.Text,
+                    Celular = Celular.Text,
+                    Correo = Correo.Text,
+                    Genero = Genero.Text,
+                   
+                });
+            }
+            catch(Exception ex)
+            {
+                Label1.Text = ex.Message;
+            }
         }
     }
 }

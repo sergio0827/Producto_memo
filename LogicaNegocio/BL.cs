@@ -24,33 +24,33 @@ namespace LogicaNegocio
         {
             string mensaje = "";
             List<SqlParameter> listaParametros = new List<SqlParameter>();
-            listaParametros.Add(new SqlParameter("registo", nuevo.RegistroEmpleado));
-            listaParametros.Add(new SqlParameter("nombre", nuevo.Nombre));
-            listaParametros.Add(new SqlParameter("pat", nuevo.Ap_Pat));
-            listaParametros.Add(new SqlParameter("mat", nuevo.Ap_Mat));
-            listaParametros.Add(new SqlParameter("gen", nuevo.Genero));
-            listaParametros.Add(new SqlParameter("cat", nuevo.Categoria));
-            listaParametros.Add(new SqlParameter("corr", nuevo.Correo));
-            listaParametros.Add(new SqlParameter("celular", nuevo.Celular));
-            listaParametros.Add(new SqlParameter("civil", nuevo.F_EdoCivil));
+            listaParametros.Add(new SqlParameter("@registo", nuevo.RegistroEmpleado));
+            listaParametros.Add(new SqlParameter("@nombre", nuevo.Nombre));
+            listaParametros.Add(new SqlParameter("@pat", nuevo.Ap_Pat));
+            listaParametros.Add(new SqlParameter("@mat", nuevo.Ap_Mat));
+            listaParametros.Add(new SqlParameter("@gen", nuevo.Genero));
+            listaParametros.Add(new SqlParameter("@cat", nuevo.Categoria));
+            listaParametros.Add(new SqlParameter("@corr", nuevo.Correo));
+            listaParametros.Add(new SqlParameter("@celular", nuevo.Celular));
+            listaParametros.Add(new SqlParameter("@civil", nuevo.F_EdoCivil));
             DAL.modificacionSegura("INSERT INTO Profesor VALUES(@registo,@nombre,@pat,@mat,@gen,@cat,@corr,@celular, @civil )", ref mensaje, listaParametros);
             return mensaje;
         }
 
 
-        public string EliminarProfesor(int id)
+        public string EliminarProfesor(int registro)
         {
             string mensaje = "";
             List<SqlParameter> listaParametros = new List<SqlParameter>();
-            listaParametros.Add(new SqlParameter("id", id));
-            DAL.modificacionSegura("DELETE FROM Profesor WHERE ID_Profe = @id", ref mensaje, listaParametros);
+            listaParametros.Add(new SqlParameter("@id", registro));
+            DAL.modificacionSegura("DELETE FROM Profesor WHERE RegistroEmpleado = @id", ref mensaje, listaParametros);
             return mensaje;
         }
         public string UpdateProfesor(Entidades.Profesor nuevo)
         {
             string mensaje = "";
             List<SqlParameter> listaParametros = new List<SqlParameter>();
-            listaParametros.Add(new SqlParameter("id", nuevo.ID_Profe));
+            listaParametros.Add(new SqlParameter("registro", nuevo.RegistroEmpleado));
             listaParametros.Add(new SqlParameter("nombre", nuevo.Nombre));
             listaParametros.Add(new SqlParameter("pat", nuevo.Ap_Pat));
             listaParametros.Add(new SqlParameter("mat", nuevo.Ap_Mat));
@@ -59,8 +59,7 @@ namespace LogicaNegocio
             listaParametros.Add(new SqlParameter("corr", nuevo.Correo));
             listaParametros.Add(new SqlParameter("celular", nuevo.Celular));
             listaParametros.Add(new SqlParameter("civil", nuevo.F_EdoCivil));
-            listaParametros.Add(new SqlParameter("registro", nuevo.RegistroEmpleado));
-            DAL.modificacionSegura("UPDATE Profesor SET RegistroEmpleado = @registro, Nombre = @nombre, Ap_Pat = @pat, Ap_Mat = @mat, Genero = @gen, Categoria = @cat, Correo = @corr, Celular = @celular, F_EdoCivil = @civil WHERE ID_Profe = @id", ref mensaje, listaParametros);
+            DAL.modificacionSegura("UPDATE Profesor SET Nombre = @nombre, Ap_Pat = @pat, Ap_Mat = @mat, Genero = @gen, Categoria = @cat, Correo = @corr, Celular = @celular, F_EdoCivil = @civil WHERE RegistroEmpleado = @registro", ref mensaje, listaParametros);
             return mensaje;
         }
 
@@ -111,6 +110,21 @@ namespace LogicaNegocio
             DAL.modificacionSegura("INSERT INTO Alumno (Matricula, Nombre, Ap_pat, Ap_mat, Genero, Correo, Celular, F_EdoCivil) VALUES (@matricula, @nombre, @pat, @mat, @gen, @corr, @celular, @civil)", ref mensaje, listaParametros);
             return mensaje;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public SqlDataReader VerEstadoCivil()
         {
             string mensaje = "";

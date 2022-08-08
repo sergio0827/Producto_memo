@@ -59,18 +59,16 @@
     </div>
 
     <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Text="Crear Profesor" OnClick="Button2_Click" />
-    <div class="mb-3">
-        <label for="idEditar" class="form-label">Id Profesor</label>
-        <asp:TextBox ID="idEditar" CssClass="form-control" runat="server"></asp:TextBox>
-    </div>
+    
     <asp:Button ID="Button4" runat="server" CssClass="btn btn-primary" Text="Editar Profesor" OnClick="Button4_Click" />
-
+    
     <br />
     <br />
     <h1>Borrar Profesores</h1>
 
     <div class="mb-3">
-        <label for="idEliminar" class="form-label">Id Profesor</label>
+        <label for="idEliminar" class="form-label">Registro profesor
+        </label>
         <asp:TextBox ID="idEliminar" CssClass="form-control" runat="server"></asp:TextBox>
     </div>
 

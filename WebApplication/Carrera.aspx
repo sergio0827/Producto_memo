@@ -9,14 +9,14 @@
     <div>
     </div>
 
-    <asp:Button ID="Button1" runat="server" Text="Ver" />
+    <asp:Button ID="Button1" runat="server" Text="Ver" OnClick="Button1_Click" />
     <asp:GridView ID="GridView1" runat="server"></asp:GridView>
 
-    <asp:Button ID="Button4" runat="server" Text="Crear" />
+    <asp:Button ID="Button4" runat="server" Text="Crear" OnClick="Button4_Click" />
 
-    <asp:Button ID="Button2" runat="server" Text="Editar" />
+    <asp:Button ID="Button2" runat="server" Text="Editar" OnClick="Button2_Click" />
 
-    <asp:Button ID="Button3" runat="server" Text="Eliminar" />
+    <asp:Button ID="Button3" runat="server" Text="Eliminar" OnClick="Button3_Click" />
 
 
 
